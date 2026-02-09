@@ -1,0 +1,12 @@
+{
+  "name": "trunorq.com",
+  "version": "1.0.0",
+  "description": "Detect paid leads that never reach your CRM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
