@@ -6,6 +6,7 @@
   <title>Trunorq — Power Up Your CRM</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://js.hsforms.net/forms/embed/43748323.js" defer></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17060133902"></script>
@@ -23,7 +24,7 @@
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#cta" class="nav-cta">Free CRM Audit</a>
+      <a href="#cta" class="nav-cta" onclick="openAuditForm(event)">Free CRM Audit</a>
     </div>
   </nav>
 
@@ -56,7 +57,7 @@
         Automate
       </span>
     </div>
-    <a href="#cta" class="primary-btn">Get a Free CRM Audit</a>
+    <a href="#cta" class="primary-btn" onclick="openAuditForm(event)">Get a Free CRM Audit</a>
   </header>
 
   <!-- ============ SERVICES ============ -->
@@ -274,7 +275,7 @@
       <p class="price">Free</p>
       <p class="price-sub">No credit card. No commitment. Just a clear report.</p>
 
-      <a class="primary-btn" href="mailto:hello@trunorq.com?subject=Free CRM Audit Request">
+      <a class="primary-btn" href="#" onclick="openAuditForm(event)">
         Request Your Free Audit
       </a>
     </div>
@@ -284,6 +285,32 @@
     <img src="/logo.svg" alt="trunorq" class="footer-logo" />
     <p>CRM operations that actually work.</p>
   </footer>
+
+  <!-- ============ HUBSPOT FORM MODAL ============ -->
+  <div class="modal-overlay" id="formModal" onclick="closeAuditForm(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeAuditForm(event)" aria-label="Close">&times;</button>
+      <h2 class="modal-title">Request Your Free CRM Audit</h2>
+      <p class="modal-sub">Fill in your details and we'll get back to you within one business day.</p>
+      <div class="hs-form-frame" data-region="na1" data-form-id="5d19791d-1e9a-4a47-923b-565a29ce03b3" data-portal-id="43748323"></div>
+    </div>
+  </div>
+
+  <script>
+    function openAuditForm(e) {
+      e.preventDefault();
+      document.getElementById('formModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeAuditForm(e) {
+      e.preventDefault();
+      document.getElementById('formModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAuditForm(e);
+    });
+  </script>
 
 </body>
 </html>
