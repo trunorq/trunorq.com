@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+  <!-- Needle north (red) -->
+  <polygon points="20,3 16,22 20,19 24,22" fill="#e63946"/>
+  <!-- Needle south (white) -->
+  <polygon points="20,37 16,18 20,21 24,18" fill="rgba(255,255,255,0.85)"/>
+  <!-- Center dot -->
+  <circle cx="20" cy="20" r="2" fill="#38bdf8"/>
+  <!-- Wordmark -->
+  <text x="42" y="27" font-family="system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" letter-spacing="-0.5" fill="#ffffff">trunorq</text>
+</svg>
