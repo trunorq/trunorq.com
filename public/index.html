@@ -314,6 +314,24 @@
     </div>
   </div>
 
+  <!-- Google Ads conversion snippet for lead form submissions -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17060133902/7Y4BCM7EoP4bEI7488Y_',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
   <script>
     function openAuditForm(e) {
       e.preventDefault();
@@ -327,6 +345,20 @@
     }
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeAuditForm(e);
+    });
+
+    // Fire Google Ads conversion when HubSpot form is submitted
+    window.addEventListener('message', function(event) {
+      if (
+        event.data &&
+        event.data.type === 'hsFormCallback' &&
+        event.data.eventName === 'onFormSubmitted'
+      ) {
+        gtag_report_conversion();
+      }
+    });
+    window.addEventListener('hs-form-event:on-submission:success', function(event) {
+      gtag_report_conversion();
     });
   </script>
 
