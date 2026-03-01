@@ -341,6 +341,14 @@
 
   <script>
     function openAuditForm(e) {
+      rdt('track', 'Custom', {
+        'event_name': 'Open Form',
+        'event_data': {
+          'form_id': '5d19791d-1e9a-4a47-923b-565a29ce03b3',
+          'form_name': 'Free CRM Audit',
+          'form_url': 'https://www.trunorq.com',
+        }
+      });
       e.preventDefault();
       document.getElementById('formModal').classList.add('active');
       document.body.style.overflow = 'hidden';
