@@ -34,6 +34,12 @@
   gtag('js', new Date());
   gtag('config', 'AW-17060133902');
 </script>
+<!-- Reddit Pixel -->
+<script>
+  !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement("script");t.src="https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_iktmxj1rigzf",t.async=!0;var s=d.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_iktmxj1rigzf');rdt('track', 'PageVisit');
+  </script>
+  <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
+  <!-- End Reddit Pixel -->
 <body>
 
   <nav class="topnav">
@@ -328,6 +334,7 @@
         'currency': 'INR',
         'event_callback': callback
       });
+      rdt('track', 'FormSubmission');
       return false;
     }
   </script>
